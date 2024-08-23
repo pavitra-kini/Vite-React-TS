@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "jsx": "react-jsx", // or "react" for React 16 and below
+    "typeRoots": ["node_modules/@types"],
+    "types": ["chai", "node"]
+  }
+}

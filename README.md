@@ -98,8 +98,8 @@
         ```
       Import the CSS file you created in your main entry file (e.g., src/main.tsx or src/index.tsx):
 
-    5. Customize Tailwind (Optional)
-        You can further customize Tailwind CSS by editing the tailwind.config.js file, such as adding custom colors, fonts, and more.
+  5. Customize Tailwind (Optional)
+      You can further customize Tailwind CSS by editing the tailwind.config.js file, such as adding custom colors, fonts, and more.
 
   Now your Vite.js application with TypeScript should be set up with Tailwind CSS!
 

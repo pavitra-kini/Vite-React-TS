@@ -91,11 +91,11 @@
       
       In your src directory, create a CSS file (e.g., src/styles/globals.css) and add the following Tailwind CSS directives:
 
-```js 
+        ```js 
       @tailwind base;
       @tailwind components;
       @tailwind utilities;
-```
+        ```
       Import the CSS file you created in your main entry file (e.g., src/main.tsx or src/index.tsx):
 
     5. Customize Tailwind (Optional)

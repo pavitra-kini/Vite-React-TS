@@ -18,7 +18,6 @@
       Vite automatically generates a tsconfig.json file when you create a TypeScript project. If you need to customize it, here’s a basic setup:
       
     ```json
-
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
@@ -31,9 +30,7 @@
     "jsx": "react-jsx", // or "react" for React 16 and below
     "typeRoots": ["node_modules/@types"],
     "types": ["chai", "node"]
-  }
-
-```
+  }```
 
   4. Rename Files to .tsx or .ts
       

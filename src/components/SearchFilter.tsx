@@ -20,6 +20,7 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ onFilterChange, initialValu
       <input
         type="text"
         placeholder="Title"
+        id='filter-title'
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         className="p-2 border rounded mr-2"
@@ -47,6 +48,7 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ onFilterChange, initialValu
       />
       <button
         onClick={handleApplyFilters}
+        id='filter-button'
         className="p-2 bg-blue-500 text-white rounded"
       >
         Apply Filters

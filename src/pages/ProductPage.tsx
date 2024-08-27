@@ -81,7 +81,7 @@ const ProductPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div id="product-list">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">Product Management</h1>
         <button
@@ -101,7 +101,7 @@ const ProductPage: React.FC = () => {
       {status === 'succeeded' ? (
         <>
           {products.length > 0 ? (
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto" id={`product-listing-page-${currentPage}`}>
               <table className="min-w-full bg-white border border-gray-200">
                 <thead>
                   <tr>
@@ -116,7 +116,7 @@ const ProductPage: React.FC = () => {
                 <tbody>
                   {products.map((product) => (
                     <tr key={product.id}>
-                      <td className="px-6 py-4 border-b text-left">{product.id}</td>
+                      <td className="px-6 py-4 border-b text-left" id='title'>{product.id}</td>
                       <td className="px-6 py-4 border-b text-left">{product.title}</td>
                       <td className="px-6 py-4 border-b text-left">${product.price}</td>
                       <td className="px-6 py-4 border-b text-left">{product.category.name}</td>
@@ -153,6 +153,7 @@ const ProductPage: React.FC = () => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index + 1}
+                  id={`page-${index + 1}`}
                   onClick={() => handlePageChange(index + 1)}
                   className={`p-2 mx-1 ${
                     currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'

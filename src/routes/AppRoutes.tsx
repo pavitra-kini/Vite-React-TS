@@ -20,11 +20,9 @@ const App: React.FC = () => {
           <Sidebar />
           <div className="flex-grow p-4">
             <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<ProductPage />} />
               <Route path="/products/:id" element={<ProductViewPage />} />
-              <Route path="*" element={<Navigate to="/home" />} />
+              <Route path="*" element={<Navigate to="/products" />} />
               <Route path="/add-product" element={<AddProductPage />} />
 
             </Routes>

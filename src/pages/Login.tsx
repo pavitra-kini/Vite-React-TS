@@ -19,12 +19,12 @@ const Login: React.FC = () => {
   // Redirect if authenticated
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/home');
+      navigate('/products');
     }
   }, [isAuthenticated, navigate]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600" id='login-form'>
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800">Sign In</h2>
         {status === 'loading' && <p className="text-center text-blue-500">Loading...</p>}

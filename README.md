@@ -70,7 +70,7 @@
   3. Configure tailwind.config.js
 
       Make sure the content array includes all the paths where Tailwind CSS will be used, such as .html, .js, .ts, .jsx, and .tsx files.
-      
+
       By default, the tailwind.config.js will look like this:
 
 ```js 
@@ -91,10 +91,10 @@
       
       In your src directory, create a CSS file (e.g., src/styles/globals.css) and add the following Tailwind CSS directives:
 
-      ```js 
+```js 
       @tailwind base;
-@tailwind components;
-@tailwind utilities;
+      @tailwind components;
+      @tailwind utilities;
 ```
       Import the CSS file you created in your main entry file (e.g., src/main.tsx or src/index.tsx):
 

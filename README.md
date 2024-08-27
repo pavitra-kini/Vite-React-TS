@@ -73,7 +73,7 @@
 
       By default, the tailwind.config.js will look like this:
 
-      ```config.js
+      ```js
 module.exports = {
   content: [
     "./index.html",
@@ -83,7 +83,8 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}```
+}
+```
 
       Make sure the content array includes all the paths where Tailwind CSS will be used, such as .html, .js, .ts, .jsx, and .tsx files.
 

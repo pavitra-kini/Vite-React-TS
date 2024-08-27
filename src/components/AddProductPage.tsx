@@ -1,22 +1,25 @@
-// src/components/AddProductPage.tsx
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { addProduct } from '../features/products/productAddSlice';
-import { RootState, AppDispatch } from '../store/store';
+import React, { useState } from 'react'; // Importing necessary React hooks
+import { useDispatch, useSelector } from 'react-redux'; // Importing hooks from react-redux for dispatching actions and selecting state
+import { useNavigate } from 'react-router-dom'; // Importing useNavigate for programmatic navigation
+import { addProduct } from '../features/products/productAddSlice'; // Importing the addProduct thunk action
+import { RootState, AppDispatch } from '../store/store'; // Importing types for RootState and AppDispatch
 
 const AddProductPage: React.FC = () => {
-  const [title, setTitle] = useState('');
-  const [price, setPrice] = useState(0);
-  const [description, setDescription] = useState('');
-  const [categoryId, setCategoryId] = useState(1); 
-  const [images, setImages] = useState<string[]>(['']); 
+  // State hooks for form inputs
+  const [title, setTitle] = useState(''); 
+  const [price, setPrice] = useState(0); 
+  const [description, setDescription] = useState(''); 
+  const [categoryId, setCategoryId] = useState(1); // Default to 1 for the category ID
+  const [images, setImages] = useState<string[]>(['']); // Initialize images as an array with one empty string
 
-  const dispatch = useDispatch<AppDispatch>(); // Use AppDispatch for dispatch
-  const navigate = useNavigate();
+  // Setting up dispatch with the correct type
+  const dispatch = useDispatch<AppDispatch>(); 
+  const navigate = useNavigate(); // For navigation after a successful product addition
 
+  // Selecting productAdd state slice
   const { status, error } = useSelector((state: RootState) => state.productAdd);
 
+  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(
@@ -30,10 +33,11 @@ const AddProductPage: React.FC = () => {
     );
   };
 
+  // Navigate to product list after successful submission
   if (status === 'succeeded') {
     setTimeout(() => {
       navigate('/products');
-    }, 2000);
+    }, 2000); // Delayed navigation for 2 seconds to allow the success message to be seen
   }
 
   return (
@@ -50,7 +54,7 @@ const AddProductPage: React.FC = () => {
             id="title"
             type="text"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)} // Update title state
             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"
             required
           />
@@ -62,7 +66,7 @@ const AddProductPage: React.FC = () => {
             id="price"
             type="number"
             value={price}
-            onChange={(e) => setPrice(Number(e.target.value))}
+            onChange={(e) => setPrice(Number(e.target.value))} // Ensure price is a number
             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"
             required
           />
@@ -73,7 +77,7 @@ const AddProductPage: React.FC = () => {
           <textarea
             id="description"
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)} // Update description state
             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"
             rows={4}
             required
@@ -86,7 +90,7 @@ const AddProductPage: React.FC = () => {
             id="categoryId"
             type="number"
             value={categoryId}
-            onChange={(e) => setCategoryId(Number(e.target.value))}
+            onChange={(e) => setCategoryId(Number(e.target.value))} // Ensure categoryId is a number
             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"
             required
           />
@@ -97,8 +101,8 @@ const AddProductPage: React.FC = () => {
           <input
             id="images"
             type="text"
-            value={images.join(',')}
-            onChange={(e) => setImages(e.target.value.split(',').map(url => url.trim()))}
+            value={images.join(',')} // Join image URLs into a comma-separated string
+            onChange={(e) => setImages(e.target.value.split(',').map(url => url.trim()))} // Split input string into an array of trimmed URLs
             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"
           />
         </div>

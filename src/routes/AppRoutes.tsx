@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
-import Home from '../pages/Home';
-import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
 import ProductPage from '../pages/ProductPage'; // Import the ProductPage component
 import { useSelector } from 'react-redux';

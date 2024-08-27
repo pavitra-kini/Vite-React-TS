@@ -37,12 +37,8 @@ const ProductPage: React.FC = () => {
     if (page < 1 || page > totalPages) return; // Prevent invalid page numbers
 
     // Update search params without resetting the filters
-    const params = new URLSearchParams();
+    const params = new URLSearchParams(searchParams.toString());
     params.set('page', page.toString());
-    if (titleFilter) params.set('title', titleFilter);
-    if (priceMinFilter) params.set('price_min', priceMinFilter);
-    if (priceMaxFilter) params.set('price_max', priceMaxFilter);
-    if (categoryIdFilter) params.set('categoryId', categoryIdFilter);
 
     setSearchParams(params);
     dispatch(setPage(page));
@@ -116,7 +112,7 @@ const ProductPage: React.FC = () => {
                 <tbody>
                   {products.map((product) => (
                     <tr key={product.id}>
-                      <td className="px-6 py-4 border-b text-left" id='title'>{product.id}</td>
+                      <td className="px-6 py-4 border-b text-left">{product.id}</td>
                       <td className="px-6 py-4 border-b text-left">{product.title}</td>
                       <td className="px-6 py-4 border-b text-left">${product.price}</td>
                       <td className="px-6 py-4 border-b text-left">{product.category.name}</td>
@@ -153,7 +149,6 @@ const ProductPage: React.FC = () => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index + 1}
-                  id={`page-${index + 1}`}
                   onClick={() => handlePageChange(index + 1)}
                   className={`p-2 mx-1 ${
                     currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'

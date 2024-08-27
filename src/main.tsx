@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import './styles/globals.css';  // Global styles including Tailwind CSS
 import { store } from './store/store';
+import './App.css';
 
 const rootElement = document.getElementById('root');
 if (rootElement) {

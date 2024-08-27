@@ -89,7 +89,7 @@
 
   4. Create a Tailwind Base CSS File
       
-      In your src directory, create a CSS file (e.g., src/styles/globals.css) and add the following Tailwind CSS directives:
+      In your src directory, create a CSS file (e.g., App.css) and add the following Tailwind CSS directives:
 
         ```js 
       @tailwind base;

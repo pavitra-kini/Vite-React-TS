@@ -1,6 +1,6 @@
 # React + TypeScript + Vite with tailwind CSS
 
-- To use TypeScript in a Vite.js application, follow these steps:
+### To use TypeScript in a Vite.js application, follow these steps:
 
   1. Create a Vite Project :
 
@@ -51,7 +51,9 @@
       
   Now you’re ready to build and run a TypeScript-powered Vite.js application!
 
-- To add Tailwind CSS to a Vite.js application with TypeScript, follow these steps:
+
+
+### To add Tailwind CSS to a Vite.js application with TypeScript, follow these steps:
 
   1. Install Tailwind CSS and Dependencies
       

@@ -73,18 +73,18 @@
 
       By default, the tailwind.config.js will look like this:
 
-```js 
-      module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
+          ```js 
+                module.exports = {
+            content: [
+              "./index.html",
+              "./src/**/*.{js,ts,jsx,tsx}",
+            ],
+            theme: {
+              extend: {},
+            },
+            plugins: [],
+          }
+          ```
 
 
   4. Create a Tailwind Base CSS File

@@ -71,7 +71,7 @@
 
       By default, the tailwind.config.js will look like this:
 
-      ```js
+      ```config.js
 module.exports = {
   content: [
     "./index.html",

@@ -30,7 +30,9 @@
     "jsx": "react-jsx", // or "react" for React 16 and below
     "typeRoots": ["node_modules/@types"],
     "types": ["chai", "node"]
-  }```
+  }
+    ```
+
 
   4. Rename Files to .tsx or .ts
       

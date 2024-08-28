@@ -172,6 +172,14 @@ Update tsconfig.json with adding following code as this will be required since w
 }
 ```
 
+Explanation of Options:
+
+- formatOptions.snippetInterface: Sets the interface for generated step definition snippets to async-await.
+- dryRun: When set to false, all scenarios will be executed. If true, scenarios are only checked for missing step definitions.
+- require: Loads all TypeScript files from the features folder as step definitions.
+- requireModule: Uses ts-node/register to allow the execution of TypeScript files.
+- format: Uses the progress-bar format for console output.
+
 ## Add scripts to package.json
 
 ```json

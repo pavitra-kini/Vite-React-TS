@@ -114,15 +114,15 @@
 - tsconfig.json
 - cucumber.json
 
-features/: Contains all Cucumber feature files and step definitions.
+**features/**: Contains all Cucumber feature files and step definitions.
 
-step-definitions/: Contains TypeScript files for step definitions and WebDriver setup.
+**step-definitions/**: Contains TypeScript files for step definitions and WebDriver setup.
 
-driver.ts: Initializes the Selenium WebDriver instance.
+**driver.ts**: Initializes the Selenium WebDriver instance.
 
-step.ts: Contains the step definitions for the test scenarios.
+**step.ts**: Contains the step definitions for the test scenarios.
 
-test.feature: The Cucumber feature file containing the BDD scenarios.
+**test.feature**: The Cucumber feature file containing the BDD scenarios.
 
 ## Getting Started
 

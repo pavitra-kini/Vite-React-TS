@@ -172,13 +172,13 @@ Update tsconfig.json with adding following code as this will be required since w
 }
 ```
 
-Explanation of Options:
+#### Explanation of Options:
 
-- formatOptions.snippetInterface: Setting it to "async-await" means that the generated snippets for step definitions will use the async/await syntax, which is more modern and easier to read, especially in TypeScript.
-- dryRun: When set to false, all scenarios will be executed. If true, scenarios are only checked for missing step definitions.
-- require: Loads all TypeScript files from the features folder as step definitions.
-- requireModule: Specifies additional modules to be loaded before executing the tests. Here, ["ts-node/register"] is required to compile TypeScript files on the fly. ts-node is a TypeScript execution engine for Node.js, allowing TypeScript files to run seamlessly.
-- format: Uses the progress-bar format for console output.
+- **formatOptions.snippetInterface**: Setting it to "async-await" means that the generated snippets for step definitions will use the async/await syntax, which is more modern and easier to read, especially in TypeScript.
+- **dryRun**: When set to false, all scenarios will be executed. If true, scenarios are only checked for missing step definitions.
+- **require**: Loads all TypeScript files from the features folder as step definitions.
+- **requireModule**: Specifies additional modules to be loaded before executing the tests. Here, ["ts-node/register"] is required to compile TypeScript files on the fly. ts-node is a TypeScript execution engine for Node.js, allowing TypeScript files to run seamlessly.
+- **format**: Uses the progress-bar format for console output.
 
 ## Add scripts to package.json
 

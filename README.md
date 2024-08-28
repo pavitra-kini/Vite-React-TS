@@ -104,3 +104,118 @@
   Now your Vite.js application with TypeScript should be set up with Tailwind CSS!
 
 
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
+
+## Project Folder Structure
+
+- features
+  - step-definitions
+    - driver.ts
+    - step.ts
+  - test.feature
+- package.json
+- tsconfig.json
+- cucumber.json
+
+features/: Contains all Cucumber feature files and step definitions.
+step-definitions/: Contains TypeScript files for step definitions and WebDriver setup.
+driver.ts: Initializes the Selenium WebDriver instance.
+step.ts: Contains the step definitions for the test scenarios.
+test.feature: The Cucumber feature file containing the BDD scenarios.
+
+## Getting Started
+
+Follow these steps to set up and run the project:
+```js 
+npm install ts-node typescript @cucumber/cucumber @types/node @types/selenium-webdriver selenium-webdriver
+```
+
+Update tsconfig.json with adding following code as this will be required since we are initilizting the driver to global variable:
+```json
+{
+  "noImplicitAny": false,
+}
+```
+## Configure Cucumber.json
+
+```json
+{
+  "default": {
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    },
+    "dryRun": false,
+    "require": ["features/**/*.ts"],
+    "requireModule": ["ts-node/register"],
+    "format": [
+      "progress-bar"
+    ]
+  }
+}
+```
+
+## Add scripts to package.json
+
+```json
+{
+  "scripts": {
+    "test": "cucumber-js"
+  }
+}
+```
+
+## Web Driver Initialization (Driver.ts)
+
+```js
+import { AfterAll, BeforeAll } from '@cucumber/cucumber';
+import { Builder, Browser } from 'selenium-webdriver';
+import chrome from 'selenium-webdriver/chrome';
+
+const options = new chrome.Options();
+options.addArguments("--disable-dev-shm-usage");
+options.addArguments("--no-sandbox");
+options.addArguments("--headless");
+options.addArguments("--disable-features=VizDisplayCompositor");
+options.addArguments("enable-automation");
+options.addArguments("--window-size=1920,1080");
+options.addArguments("--disable-gpu");
+options.addArguments("--disable-extensions");
+options.addArguments("--dns-prefetch-disable");
+options.addArguments("enable-features=NetworkServiceInProcess");
+
+BeforeAll(async () => {
+    global.driver = await new Builder()
+        .forBrowser(Browser.CHROME)
+        .setChromeOptions(options)
+        .build();
+});
+
+AfterAll(async () => {
+    if (global.driver) {
+        await global.driver.quit();
+    }
+});
+```
+
+## Write your feature File, Step Definations and execute
+
+To run the tests, use the following command:
+```js
+npm run test
+```
+
+This command will execute all the scenarios defined in the .feature files.

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'; // Ensure you are using the new createRoot API for React 18
 import { Provider } from 'react-redux';
 import App from './App';
-import './styles/globals.css';  // Global styles including Tailwind CSS
 import { store } from './store/store';
 import './App.css';
 
